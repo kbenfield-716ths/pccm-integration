@@ -1,151 +1,156 @@
 # PCCM Integration Workspace
 
-🚀 **Integration repository for combining PCCM Schedule and Moonlighter systems**
+🚀 **Migrate PCCM Vacation Scheduler INTO your existing Fly.io Moonlighting deployment**
 
-This repository provides a safe workspace for integrating the vacation/time-off scheduling system with the moonlighting shift scheduler.
+---
 
-## 📋 Repository Purpose
+## 📋 What's Happening
 
-This integration workspace allows you to:
-- ✅ Safely combine features from both systems
-- ✅ Test integration changes without affecting production
-- ✅ Track all modifications with version control
-- ✅ Maintain clear separation between production and development
-- ✅ Collaborate effectively with detailed task tracking
+**Current State**:
+- ✅ **Moonlighting**: Working on Fly.io (FastAPI + SQLite)
+- 📦 **Vacation Scheduling**: On GitHub Pages + Supabase
 
-## 🏗️ Repository Structure
+**Goal**:
+- ✅ **Everything on Fly.io** (one deployment)
+- ✅ **Single SQLite database** (no more Supabase!)
+- ✅ **No RLS headaches** (simple SQL)
+- ✅ **Unified login** (one authentication system)
+
+---
+
+## 🎯 Why This Approach
+
+### Eliminate Supabase Because:
+- ❌ RLS is frustrating and overcomplicated
+- ❌ Split architecture (2 systems to manage)
+- ❌ Auth friction (user_id sync, password resets)
+- ❌ Can't easily migrate to UVA hosting
+
+### Use Fly.io Because:
+- ✅ You already have it working!
+- ✅ Simple SQLite (you own the data)
+- ✅ Single deployment (~$3/month)
+- ✅ Easy to move to UVA later
+- ✅ No RLS complexity
+
+---
+
+## 🏗️ Architecture
 
 ```
-pccm-integration/
-├── README.md                          # This file
-├── PROJECT_TASKS.md                   # Complete checklist for GitHub Projects
-├── INTEGRATION_PLAN.md                # Full 4-stage integration roadmap
-├── TESTING_GUIDE.md                   # How to test locally
-│
-├── docs/                              # All documentation
-│   ├── STAGE_1_CURRENT_STATE.md
-│   ├── STAGE_2_MOONLIGHTING.md
-│   ├── STAGE_3_CLINICAL_SCHEDULE.md
-│   ├── STAGE_4_QGENDA.md
-│   ├── HOW_POINTS_ARE_CALCULATED.md
-│   └── DEPLOYMENT_GUIDE.md
-│
-├── production/                        # Current working systems
-│   ├── pccm-schedule/                # Production vacation scheduler
-│   └── moonlighter/                  # Production moonlighting scheduler
-│
-├── integration/                       # Work-in-progress integration
-│   ├── index.html                    # Combined login
-│   ├── dashboard.html                # Unified dashboard
-│   ├── vacation/                     # Vacation scheduling module
-│   ├── moonlighting/                 # Moonlighting module
-│   └── shared/                       # Shared components
-│
-├── database/
-│   ├── current-schema/               # Production schemas
-│   ├── migrations/                   # Integration migrations
-│   └── test-data/                    # Sample data for testing
-│
-├── scripts/
-│   ├── local-test-server.py          # Simple HTTP server for testing
-│   ├── deploy-to-production.sh       # Deployment script
-│   └── backup-production.sh          # Backup script
-│
-└── tests/
-    ├── integration-tests.md          # Test scenarios
-    └── user-acceptance-tests.md      # UAT checklist
+Fly.io Container (~$3/month)
+├── FastAPI Backend
+│   ├── Moonlighting API (existing)
+│   └── Vacation API (new)
+├── SQLite Database
+│   ├── faculty (extended)
+│   ├── moonlight_* tables (existing)
+│   └── vacation_* tables (new)
+└── Static Files
+    ├── Moonlighting pages (existing)
+    └── Vacation pages (new)
 ```
 
-## 🎯 Current Status: Stage 2 Planning
-
-**Stage 1 (COMPLETE)**: Time-off scheduler with economic points ✅
-**Stage 2 (IN PROGRESS)**: Moonlighting integration 🚧
-**Stage 3 (PLANNED)**: Clinical schedule automation 📅
-**Stage 4 (PLANNED)**: QGenda integration 🔌
-
-## 🚀 Quick Start
-
-### For Integration Work
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/kbenfield-716ths/pccm-integration.git
-   cd pccm-integration
-   ```
-
-2. **Review the task list**
-   ```bash
-   cat PROJECT_TASKS.md
-   ```
-
-3. **Start working in the integration folder**
-   ```bash
-   cd integration/
-   # Make your changes here
-   ```
-
-4. **Test locally**
-   ```bash
-   python3 scripts/local-test-server.py
-   # Open http://localhost:8000 in browser
-   ```
-
-5. **Commit your changes**
-   ```bash
-   git add .
-   git commit -m "Description of changes"
-   git push
-   ```
-
-### For Creating GitHub Project
-
-1. Go to your repository → **Projects** tab
-2. Click **New Project**
-3. Choose **Board** view
-4. Use **PROJECT_TASKS.md** to create your task cards
-5. Organize by Stage/Phase
+---
 
 ## 📚 Key Documents
 
-- **[PROJECT_TASKS.md](./PROJECT_TASKS.md)** - Complete task checklist (use this for GitHub Projects)
-- **[INTEGRATION_PLAN.md](./INTEGRATION_PLAN.md)** - Full 4-stage roadmap
-- **[TESTING_GUIDE.md](./TESTING_GUIDE.md)** - How to test your changes
+- **[PROJECT_TASKS.md](./PROJECT_TASKS.md)** - 20 tasks, ~15 hours total
+- **[INTEGRATION_PLAN.md](./INTEGRATION_PLAN.md)** - Complete technical plan
+- **[QUICK_START.md](./QUICK_START.md)** - Get started immediately
 
-## 🔗 Related Repositories
+---
 
-- **Production Vacation Scheduler**: [PCCMSchedule](https://github.com/kbenfield-716ths/PCCMSchedule)
-- **Production Moonlighter**: [moonlighter-web](https://github.com/kbenfield-716ths/moonlighter-web)
+## 🚀 Quick Start
 
-## ⚠️ Important Notes
-
-1. **Never edit production repos directly** - Always work in this integration repo first
-2. **Test thoroughly** - Use the testing guide before deploying
-3. **Keep production separate** - The `production/` folder is read-only reference
-4. **Document everything** - Update docs as you make changes
-5. **Commit frequently** - Small, focused commits are easier to track
-
-## 🛠️ Workflow
-
-```
-1. Read PROJECT_TASKS.md
-   ↓
-2. Pick a task
-   ↓
-3. Work in integration/ folder
-   ↓
-4. Test locally
-   ↓
-5. Commit to this repo
-   ↓
-6. When ready: Deploy to production repos
+### 1. Clone This Repo
+```bash
+git clone https://github.com/kbenfield-716ths/pccm-integration.git
+cd pccm-integration
 ```
 
-## 📞 Questions?
+### 2. Read the Plan
+```bash
+cat QUICK_START.md
+cat INTEGRATION_PLAN.md
+```
 
-Refer to the detailed documentation in the `docs/` folder, or check the task notes in `PROJECT_TASKS.md`.
+### 3. Start First Task
+**Task 1.1: Extend Faculty Model**
+- Add vacation fields to existing Faculty model
+- ~30 minutes
+- No breaking changes
+
+---
+
+## 📊 Timeline
+
+- **Day 1**: Database extension (3 hours)
+- **Day 2**: API endpoints (4 hours)
+- **Days 3-4**: Frontend (6 hours)
+- **Day 5**: Deployment (2 hours)
+
+**Total**: ~15 hours over 5 days
+
+---
+
+## 📁 Repository Structure
+
+```
+pccm-integration/
+├── README.md                  # This file
+├── QUICK_START.md             # Get started guide
+├── PROJECT_TASKS.md           # 20 detailed tasks
+├── INTEGRATION_PLAN.md        # Technical architecture
+│
+├── integration/               # Your workspace
+│   ├── backend/              # Python FastAPI code
+│   └── frontend/             # HTML/CSS/JS
+│
+├── production/               # Reference copies
+│   ├── moonlighter/         # Current Fly.io system
+│   └── pccm-schedule/       # Current Supabase system
+│
+└── scripts/                  # Migration utilities
+    ├── export_from_supabase.py
+    └── import_to_sqlite.py
+```
+
+---
+
+## ✅ Final Result
+
+After migration, you'll have:
+
+- ✅ **Single login** for both systems
+- ✅ **Unified dashboard** showing moonlighting + vacation
+- ✅ **One database** (SQLite on Fly.io)
+- ✅ **No Supabase** (eliminated!)
+- ✅ **Easy to migrate** to UVA hosting
+- ✅ **Cost**: ~$3/month total
+
+---
+
+## 🔗 Your Repositories
+
+- **This Integration Repo**: [pccm-integration](https://github.com/kbenfield-716ths/pccm-integration)
+- **Moonlighter (Fly.io)**: [moonlighter-web](https://github.com/kbenfield-716ths/moonlighter-web)
+- **PCCM Schedule (Supabase)**: [PCCMSchedule](https://github.com/kbenfield-716ths/PCCMSchedule)
+
+---
+
+## 📞 Getting Help
+
+- **Tasks**: See [PROJECT_TASKS.md](./PROJECT_TASKS.md)
+- **Architecture**: See [INTEGRATION_PLAN.md](./INTEGRATION_PLAN.md)
+- **Start Here**: See [QUICK_START.md](./QUICK_START.md)
+
+---
+
+**Ready to consolidate everything? Start with QUICK_START.md! 🚀**
 
 ---
 
 **Last Updated**: November 21, 2025  
-**Current Phase**: Stage 2 Development  
-**Status**: Active Development 🚧
+**Status**: Ready for Development  
+**Timeline**: ~15 hours over 5 days
