@@ -1,313 +1,225 @@
-# 🎉 Integration Repository - Setup Complete!
+# ✅ Integration Repository - Setup Complete! (REVISED)
 
-**Repository**: [github.com/kbenfield-716ths/pccm-integration](https://github.com/kbenfield-716ths/pccm-integration)  
-**Created**: November 21, 2025  
-**Status**: Ready for Development
+**Major Update**: Plan revised to migrate FROM Supabase TO Fly.io (eliminating RLS complexity!)
 
 ---
 
-## ✅ What's Been Created
+## 🎯 What Changed
 
-### 📁 Repository Structure
+**Original Plan**: Integrate both systems using Supabase  
+**REVISED Plan**: Consolidate everything into your existing Fly.io deployment
 
+### Why the Change?
+- ✅ You already have Fly.io working
+- ✅ Supabase RLS was causing friction
+- ✅ Simpler architecture = less complexity
+- ✅ SQLite is easier than PostgreSQL + RLS
+- ✅ Easy to migrate to UVA hosting later
+- ✅ Single $3/month cost vs managing two systems
+
+---
+
+## 📦 What's in This Repository
+
+### Core Documents (All Updated!)
+1. ✅ **README.md** - Overview of Fly.io consolidation approach
+2. ✅ **PROJECT_TASKS.md** - 20 tasks, ~15 hours total (simplified from 35+ tasks!)
+3. ✅ **INTEGRATION_PLAN.md** - Complete technical plan for Fly.io migration
+4. ✅ **QUICK_START.md** - How to get started immediately
+5. ✅ **TESTING_GUIDE.md** - Local testing guide
+6. ✅ **SETUP_COMPLETE.md** - This summary
+
+### Structure
 ```
 pccm-integration/
-├── README.md                   ✅ Main documentation
-├── QUICK_START.md              ✅ Get started in 10 minutes
-├── PROJECT_TASKS.md            ✅ Complete task checklist (35+ tasks)
-├── INTEGRATION_PLAN.md         ✅ Full 4-stage roadmap
-├── TESTING_GUIDE.md            ✅ How to test locally
-├── .gitignore                  ✅ Ignore unnecessary files
-│
-├── docs/                       ✅ Documentation folder
-│   └── README.md              ✅ Docs overview
-│
-├── integration/                ✅ Development workspace
-│   └── README.md              ✅ Workspace guide
-│
-├── production/                 ✅ Reference systems
-│   └── README.md              ✅ Production reference guide
-│
-├── database/                   ✅ Database files
-│   └── README.md              ✅ Database guide
-│
-└── scripts/                    ✅ Utility scripts
-    ├── README.md              ✅ Scripts overview
-    └── local-test-server.py   ✅ Local HTTP server
-```
-
-### 📚 Key Documents
-
-#### 1. PROJECT_TASKS.md (17KB)
-**Complete checklist with 35+ tasks organized by phase**
-
-Features:
-- ✅ Clear task descriptions
-- ✅ Acceptance criteria for each task
-- ✅ File locations and code examples
-- ✅ Dependencies mapped
-- ✅ Implementation notes
-- ✅ Labels for GitHub Projects
-- ✅ Milestones defined
-- ✅ Critical path identified
-
-**Phases Covered**:
-- Phase 2.1: Planning & Architecture (3 tasks)
-- Phase 2.2: Database Setup (3 tasks)
-- Phase 2.3: Frontend Integration (4 tasks)
-- Phase 2.4: Optimization Algorithm (3 tasks)
-- Phase 2.5: Testing & Validation (3 tasks)
-- Phase 2.6: Documentation & Deployment (3 tasks)
-- Plus: Stage 3 & 4 future planning
-
-#### 2. INTEGRATION_PLAN.md (12KB)
-**Complete 4-stage vision**
-
-Contains:
-- ✅ Stage 1 summary (complete)
-- ✅ Stage 2 detailed plan (in progress)
-- ✅ Stage 3 clinical schedule (future)
-- ✅ Stage 4 QGenda integration (future)
-- ✅ Technical architecture
-- ✅ Database schemas
-- ✅ Algorithm approach
-- ✅ Timeline estimates
-- ✅ Cost projections
-- ✅ Success metrics
-
-#### 3. TESTING_GUIDE.md
-**Comprehensive testing documentation**
-
-Includes:
-- ✅ Local testing setup
-- ✅ Test scenarios
-- ✅ Browser console testing
-- ✅ Database testing
-- ✅ Performance testing
-- ✅ Mobile testing
-- ✅ Integration test workflows
-- ✅ Bug reporting process
-
-#### 4. QUICK_START.md
-**Get up and running in 10 minutes**
-
-Steps:
-- ✅ Clone repository
-- ✅ Create GitHub Project board
-- ✅ Review the plan
-- ✅ Understand setup
-- ✅ Start first task
-- ✅ Track progress
-
----
-
-## 🎯 What You Can Do Now
-
-### Immediate Actions (Today)
-
-1. **⭐ Star the repository**
-   - Makes it easy to find
-   - Shows active development
-
-2. **📋 Create GitHub Project Board**
-   - Go to Projects tab
-   - Create new project (Board view)
-   - Add tasks from PROJECT_TASKS.md
-   - Organize with labels/milestones
-
-3. **📖 Read QUICK_START.md**
-   - Understand the setup
-   - Learn the workflow
-   - Get oriented
-
-### This Week
-
-4. **🔍 Start Task 2.1.1: Review Current Systems**
-   - Explore both production sites
-   - Document findings
-   - Identify integration points
-   - Create CURRENT_SYSTEMS_COMPARISON.md
-
-5. **🎨 Start Task 2.1.2: Design Unified Database Schema**
-   - Review existing schemas
-   - Design merged tables
-   - Plan migrations
-   - Document in database/migrations/
-
-6. **📝 Start Task 2.1.3: Define Business Rules**
-   - Document moonlighting point rules
-   - Define fairness constraints
-   - Specify conflict resolution
-   - Create MOONLIGHTING_BUSINESS_RULES.md
-
----
-
-## 🗺️ Your Integration Journey
-
-### Current Position: Stage 2 Planning
-
-```
-Stage 1: MVP Scheduler ✅ COMPLETE
-    ↓
-Stage 2: Moonlighting Integration 🚧 STARTING NOW
-    ↓ Phase 2.1: Planning (2 weeks)
-    ↓ Phase 2.2: Database (1 week)
-    ↓ Phase 2.3: Frontend (3 weeks)
-    ↓ Phase 2.4: Algorithm (2 weeks)
-    ↓ Phase 2.5: Testing (2 weeks)
-    ↓ Phase 2.6: Deployment (1 week)
-    ↓
-Stage 3: Clinical Schedule (Future)
-    ↓
-Stage 4: QGenda Integration (Future)
-```
-
-### Timeline Estimate
-
-- **Stage 2 Complete**: ~11 weeks (~3 months)
-- **All Stages Complete**: 12-16 months
-
----
-
-## 🛠️ Development Workflow
-
-### Daily Cycle
-
-```
-1. Check GitHub Project board
-   ↓
-2. Move task to "In Progress"
-   ↓
-3. Work in integration/ folder
-   ↓
-4. Test with local server
-   ↓
-5. Commit changes
-   ↓
-6. Update board → "Done"
-```
-
-### Testing Cycle
-
-```
-1. Write code in integration/
-   ↓
-2. python3 scripts/local-test-server.py
-   ↓
-3. Open http://localhost:8000
-   ↓
-4. Test functionality
-   ↓
-5. Check browser console (F12)
-   ↓
-6. Fix issues, repeat
+├── docs/              # Documentation
+├── integration/       # Your workspace
+├── production/        # Reference files
+├── database/          # SQLite schemas
+└── scripts/           # Migration utilities
 ```
 
 ---
 
-## 📊 Progress Tracking
+## 🚀 The New Plan (Much Simpler!)
 
-### GitHub Project Board Setup
+### What You're Doing
+**Migrating**: PCCM vacation scheduler (Supabase) → Moonlighting system (Fly.io)
 
-**Recommended Columns**:
-1. 📋 Backlog - Future tasks
-2. 🎯 Ready - Ready to start
-3. 🚧 In Progress - Currently working
-4. 🔍 In Review - Testing phase
-5. ✅ Done - Completed
-6. 🚫 Blocked - Can't proceed
+### Timeline
+- **Day 1**: Extend SQLite database (3 hours)
+- **Day 2**: Add vacation API endpoints (4 hours)
+- **Days 3-4**: Build vacation frontend (6 hours)
+- **Day 5**: Deploy and test (2 hours)
 
-**Labels to Create**:
-- `stage-2` (blue)
-- `priority-high` (red)
-- `priority-medium` (orange)
-- `priority-low` (gray)
-- `type-frontend` (purple)
-- `type-backend` (teal)
-- `type-algorithm` (pink)
-- `type-docs` (white)
-- `blocked` (red)
-
-**Milestones**:
-1. Stage 2 Planning Complete
-2. Stage 2 Database Ready
-3. Stage 2 MVP
-4. Stage 2 Algorithm Complete
-5. Stage 2 Production
+**Total**: ~15 hours over 5 days (vs 11 weeks in original plan!)
 
 ---
 
-## 💡 Pro Tips
+## 📋 Task Breakdown
 
-### For Success
+### Phase 1: Database (3 hours)
+- Task 1.1: Extend Faculty model (30 min)
+- Task 1.2: Create vacation tables (1 hour)
+- Task 1.3: Migration script (45 min)
+- Task 1.4: Export from Supabase (30 min)
+- Task 1.5: Import script (30 min)
 
-1. **Start Small**: Begin with Phase 2.1 tasks only
-2. **Document Everything**: Update docs as you learn
-3. **Test Early**: Use local server from day 1
-4. **Commit Often**: Small, focused commits
-5. **Ask Questions**: Document uncertainties
-6. **Celebrate Wins**: Mark tasks as done!
+### Phase 2: Backend API (4 hours)
+- Task 2.1: Add vacation endpoints (2 hours)
+- Task 2.2: Points calculation logic (1 hour)
+- Task 2.3: Test locally (1 hour)
 
-### Avoid These Mistakes
+### Phase 3: Frontend (6 hours)
+- Task 3.1: Create vacation.html (3 hours)
+- Task 3.2: Update dashboard (2 hours)
+- Task 3.3: Update admin panel (1 hour)
 
-1. ❌ Don't edit production repos directly
-2. ❌ Don't skip testing
-3. ❌ Don't work without committing
-4. ❌ Don't ignore documentation
-5. ❌ Don't try to do everything at once
-
----
-
-## 🔗 Important Links
-
-### Your Repositories
-- **Integration Workspace**: [pccm-integration](https://github.com/kbenfield-716ths/pccm-integration)
-- **Production Vacation**: [PCCMSchedule](https://github.com/kbenfield-716ths/PCCMSchedule)
-- **Production Moonlighter**: [moonlighter-web](https://github.com/kbenfield-716ths/moonlighter-web)
-
-### Live Sites
-- **PCCM Schedule**: https://kbenfield-716ths.github.io/PCCMSchedule/
-- **Moonlighter**: https://kbenfield-716ths.github.io/moonlighter-web/
+### Phase 4: Deployment (2 hours)
+- Task 4.1: Local testing (30 min)
+- Task 4.2: Deploy to Fly.io (30 min)
+- Task 4.3: Import data (30 min)
+- Task 4.4: End-to-end testing (30 min)
 
 ---
 
-## 🎓 Resources
+## 🏗️ Architecture (Simplified!)
 
-### In This Repository
-- [📖 QUICK_START.md](./QUICK_START.md) - Start here!
-- [📋 PROJECT_TASKS.md](./PROJECT_TASKS.md) - All tasks
-- [🗺️ INTEGRATION_PLAN.md](./INTEGRATION_PLAN.md) - Full roadmap
-- [🧪 TESTING_GUIDE.md](./TESTING_GUIDE.md) - Testing help
+```
+BEFORE (Complex):
+┌─────────────────┐      ┌──────────────────┐
+│ GitHub Pages    │      │ Fly.io           │
+│ (Vacation UI)   │      │ (Moonlighting)   │
+└────────┬────────┘      └────────┬─────────┘
+         │                        │
+         v                        v
+┌────────────────┐      ┌──────────────────┐
+│ Supabase       │      │ SQLite           │
+│ + RLS Hell     │      │                  │
+└────────────────┘      └──────────────────┘
+(Two systems, two databases, RLS complexity)
 
-### External Resources
-- Supabase Docs: https://supabase.com/docs
-- GitHub Projects: https://docs.github.com/en/issues/planning-and-tracking-with-projects
-- PuLP (Python optimization): https://coin-or.github.io/pulp/
+AFTER (Simple):
+┌─────────────────────────────┐
+│ Fly.io Container ($3/month) │
+│                             │
+│ ├── FastAPI Backend         │
+│ │   ├── Moonlighting API    │
+│ │   └── Vacation API        │
+│ │                           │
+│ ├── SQLite Database         │
+│ │   ├── faculty (extended)  │
+│ │   ├── moonlight_*         │
+│ │   └── vacation_*          │
+│ │                           │
+│ └── Static Files            │
+│     ├── Moonlighting pages  │
+│     └── Vacation pages      │
+└─────────────────────────────┘
+(One system, one database, no RLS!)
+```
 
 ---
 
-## 🎉 You're All Set!
+## ✅ What You'll Have
 
-Everything is ready for you to start integrating the systems. The repository has:
-
-✅ **Complete documentation** (5 major guides)  
-✅ **Detailed task list** (35+ tasks with notes)  
-✅ **Clear structure** (organized folders)  
-✅ **Testing tools** (local server script)  
-✅ **Best practices** (workflows and tips)  
-
-### Start Here
-
-1. **Read**: [QUICK_START.md](./QUICK_START.md)
-2. **Create**: GitHub Project board
-3. **Begin**: Task 2.1.1
+After completion:
+- ✅ **Single login** for both systems
+- ✅ **Unified dashboard** showing everything
+- ✅ **One database** (SQLite)
+- ✅ **One deployment** (Fly.io)
+- ✅ **No Supabase** (eliminated!)
+- ✅ **No RLS headaches** (simple SQL)
+- ✅ **Easy migration** to UVA later
+- ✅ **Cost**: ~$3/month total
 
 ---
 
-**Ready to build the future of PCCM scheduling? Let's go! 🚀**
+## 🎯 Your Next Steps
+
+### Today (30 minutes)
+1. Read [QUICK_START.md](./QUICK_START.md)
+2. Review [INTEGRATION_PLAN.md](./INTEGRATION_PLAN.md)
+3. Create GitHub Project board (optional)
+
+### This Week (Day 1)
+4. Clone your moonlighter-web repo locally
+5. Start Task 1.1: Extend Faculty model
+6. Complete Phase 1 (database extension)
+
+### Next Week
+7. Complete remaining phases
+8. Deploy to Fly.io
+9. Shut down Supabase 🎉
+
+---
+
+## 💡 Key Advantages
+
+### Technical Benefits
+- ✅ **Simpler**: One codebase, one database
+- ✅ **Faster**: No network calls between systems
+- ✅ **Portable**: Easy to move to UVA hosting
+- ✅ **Maintainable**: Straightforward SQL, no RLS
+- ✅ **Testable**: Local SQLite for development
+
+### Operational Benefits
+- ✅ **Cost**: $3/month vs managing two free tiers
+- ✅ **Deployment**: One command deploys everything
+- ✅ **Backup**: Just copy SQLite file
+- ✅ **Migration**: Docker container is portable
+- ✅ **Debugging**: No RLS hiding issues
+
+---
+
+## 📊 Comparison
+
+| Aspect | Original Plan | REVISED Plan |
+|--------|--------------|--------------|
+| **Timeline** | 11 weeks | 5 days |
+| **Tasks** | 35+ tasks | 20 tasks |
+| **Effort** | Complex | Straightforward |
+| **Systems** | 2 (GitHub + Fly.io) | 1 (Fly.io) |
+| **Databases** | Supabase (RLS) | SQLite (simple) |
+| **Cost** | $0 (2 free tiers) | $3/month |
+| **Complexity** | High | Low |
+| **Migration** | Difficult | Easy |
+
+---
+
+## 🚀 Ready to Start?
+
+### Immediate Actions
+1. **Read**: [QUICK_START.md](https://github.com/kbenfield-716ths/pccm-integration/blob/main/QUICK_START.md)
+2. **Clone**: `git clone https://github.com/kbenfield-716ths/pccm-integration.git`
+3. **Review**: Check out [PROJECT_TASKS.md](./PROJECT_TASKS.md)
+4. **Begin**: Start with Task 1.1
+
+### Support Resources
+- **Detailed Plan**: INTEGRATION_PLAN.md
+- **Task List**: PROJECT_TASKS.md
+- **Testing Guide**: TESTING_GUIDE.md
+
+---
+
+## 📞 Questions?
+
+Everything you need is in:
+- [QUICK_START.md](./QUICK_START.md) - Get started
+- [INTEGRATION_PLAN.md](./INTEGRATION_PLAN.md) - Technical details
+- [PROJECT_TASKS.md](./PROJECT_TASKS.md) - Step-by-step tasks
+
+---
+
+## 🎉 Bottom Line
+
+**You're consolidating two systems into one, eliminating Supabase complexity, and making everything simpler and more maintainable in just 15 hours of work.**
+
+**Much better than the original 11-week plan! 🚀**
 
 ---
 
 **Repository**: https://github.com/kbenfield-716ths/pccm-integration  
-**Last Updated**: November 21, 2025  
-**Status**: ✅ Ready for Development
+**Status**: ✅ Ready for Development  
+**Timeline**: ~15 hours over 5 days  
+**Approach**: **REVISED** - Fly.io consolidation
